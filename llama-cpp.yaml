@@ -1,0 +1,25 @@
+fullnameOverride: llama-cpp
+
+deployment:
+  resources:
+    limits:
+      nvidia.com/gpu: 1
+    requests:
+      cpu: 2
+      memory: 5Gi
+
+  tolerations:
+  - key: nodepool
+    operator: Equal
+    value: llm
+    effect: NoSchedule
+
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: role
+            operator: In
+            values:
+            - llm
