@@ -23,3 +23,5 @@ deployment:
             operator: In
             values:
             - llm
+
+huggingFaceUser: chornberger
