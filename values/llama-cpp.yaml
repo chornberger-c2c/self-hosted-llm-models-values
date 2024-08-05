@@ -25,7 +25,3 @@ deployment:
             - llm
 
 huggingFaceUser: chornberger
-
-grafana:
-  plugins:
-    - grafana-llm-app
